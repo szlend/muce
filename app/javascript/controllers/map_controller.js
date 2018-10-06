@@ -1,6 +1,8 @@
 import { Controller } from "stimulus";
 import * as LocationService from "services/location_service";
 
+import PinIcon from "assets/images/map/pin.png";
+
 function NewCatControl(controlDiv, map) {
   // Set CSS for the control border.
   var controlUI = document.createElement('div');
@@ -74,8 +76,7 @@ export default class extends Controller {
             position: {lat: cat.latitude, lng: cat.longitude},
             map: this.map,
             title: cat.name,
-            icon: {url: "/assets/map/pin.png", scaledSize: new google.maps.Size(32, 50)},
-
+            icon: {url: PinIcon, scaledSize: new google.maps.Size(32, 50)}
           });
 
           marker.addListener("click", () => infoWindow.open(this.map, marker));
