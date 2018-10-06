@@ -9,6 +9,8 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
+gem 'asset_sync'
+gem 'fog-google'
 
 gem 'turbolinks', '~> 5'
 gem 'bootstrap', '~> 4.1.3'
@@ -20,11 +22,6 @@ gem 'mini_magick', '~> 4.8'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootsnap', '>= 1.1.0', require: false
-
-group :production do
-  gem 'asset_sync'
-  gem 'fog-google'
-end
 
 group :development do
   gem 'web-console', '>= 3.3.0'
