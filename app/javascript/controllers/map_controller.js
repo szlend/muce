@@ -73,7 +73,9 @@ export default class extends Controller {
           const marker = new google.maps.Marker({
             position: {lat: cat.latitude, lng: cat.longitude},
             map: this.map,
-            title: cat.name
+            title: cat.name,
+            icon: {url: "/assets/map/pin.png", scaledSize: new google.maps.Size(32, 50)},
+
           });
 
           marker.addListener("click", () => infoWindow.open(this.map, marker));
