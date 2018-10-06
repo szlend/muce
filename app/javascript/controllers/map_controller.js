@@ -63,7 +63,11 @@ export default class extends Controller {
       .then(cats => {
         for (let cat of cats) {
           const infoWindow = new google.maps.InfoWindow({
-            content: `<h1>${cat.name}</h1><p>${cat.description}</p><img src="https://www.alleycat.org/wp-content/uploads/2015/04/Facebook_Link_FeralorStray.jpg" style="max-width: 300px"/>`
+            content:
+              `<h1>${cat.name}</h1>` +
+              `<p>${cat.description}</p>` +
+              `<div><a href="/cats/${cat.id}"><img src="${cat.image.thumb.url}" style="max-width: 300px"/></a></div>` +
+              `<a href="/cats/${cat.id}">View profile</a>`
           });
 
           const marker = new google.maps.Marker({

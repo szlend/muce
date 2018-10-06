@@ -1,6 +1,6 @@
 <div class="container">
-  <%= link_to "Home", root_path %>
-  <h1>New cat</h1>
+  <%= link_to "Back", cat_path(@cat) %>
+  <h1>Edit <%= @cat.name %></h1>
 
   <%= render partial: "form", locals: { cat: @cat } %>
 </div>

@@ -1,0 +1,49 @@
+<%= form_for cat do |f| %>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control", placeholder: "Unknown" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, rows: 5, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+        <%= f.hidden_field :image_cache %>
+        <%= image_tag f.object.image.thumb.url if f.object.image? %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+        <%= f.label :latitude, "Location" %>
+        <div class="card" data-controller="location-picker">
+          <div class="embed-responsive embed-responsive-16by9" data-target="location-picker.map"></div>
+          <%= f.hidden_field :latitude, data: { target: "location-picker.latitude" } %>
+          <%= f.hidden_field :longitude, data: { target: "location-picker.longitude" } %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

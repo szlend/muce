@@ -12,12 +12,18 @@ gem 'webpacker'
 
 gem 'turbolinks', '~> 5'
 gem 'bootstrap', '~> 4.1.3'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick', '~> 4.8'
+
 # gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
-# gem 'mini_magick', '~> 4.8'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootsnap', '>= 1.1.0', require: false
+
+group :production do
+  gem 'fog-google'
+end
 
 group :development do
   gem 'web-console', '>= 3.3.0'

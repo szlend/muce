@@ -2,4 +2,5 @@
 
 require_relative 'config/environment'
 
+use Rack::Static, urls: ['/carrierwave'], root: 'tmp'
 run Rails.application

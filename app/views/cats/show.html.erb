@@ -1,0 +1,9 @@
+<div class="container">
+  <%= link_to "Home", root_path %> | <%= link_to "Edit", edit_cat_path(@cat) %>
+  <h1><%= @cat.name %></h1>
+  <p><%= @cat.description %></p>
+
+  <div>
+    <%= image_tag @cat.image.thumb.url, alt: @cat.name, class: "img-fluid" %>
+  </div>
+</div>

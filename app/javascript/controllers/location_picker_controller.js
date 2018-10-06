@@ -16,9 +16,13 @@ export default class extends Controller {
 
     this.marker = new google.maps.Marker();
 
-    this.setOverviewPosition();
-    this.resolveApproximatePosition();
-    this.resolveAccuratePosition();
+    if (this.latitudeTarget.value && this.longitudeTarget.value) {
+      this.setPosition({lat: +this.latitudeTarget.value, lng: +this.longitudeTarget.value});
+    } else {
+      this.setOverviewPosition();
+      this.resolveApproximatePosition();
+      this.resolveAccuratePosition();
+    }
 
     this.map.addListener("click", this.onClick.bind(this));
   }
