@@ -12,6 +12,10 @@ class CatImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def default_url(*args)
+    ActionController::Base.helpers.asset_path("cat/image/placeholder.png")
+  end
+
   def filename
     "#{digest}.#{file.extension}" if original_filename
   end
