@@ -1,3 +1,5 @@
+require_relative '../../lib/middleware/heroku_force_https'
+
 Rails.application.configure do
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = false
@@ -93,4 +95,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Overwrite Heroku X-Forwarded-Proto
+  config.middleware.insert 0, HerokuForceHttps
 end
