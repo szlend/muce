@@ -13,7 +13,7 @@ class CatImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url(*args)
-    ActionController::Base.helpers.asset_path("cat/image/placeholder.png")
+    ActionController::Base.helpers.asset_pack_path("images/cat/image/placeholder.png")
   end
 
   def filename

@@ -1,7 +1,7 @@
 import { Controller } from "stimulus";
 import * as LocationService from "services/location_service";
 
-import PinIcon from "assets/images/map/pin.png";
+import PinIcon from "images/map/pin.png";
 
 function NewCatControl(controlDiv, map) {
   // Set CSS for the control border.
